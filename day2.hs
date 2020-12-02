@@ -7,7 +7,7 @@ valid []=0
 valid (x:xs) = if check x then valid xs + 1 else valid xs
 
 check :: Input  -> Bool
-check (MyInput mymin mymax mychar str) = (mymin <= count && count <= mymax)
+check (MyInput mymin mymax mychar str) = mymin <= count && count <= mymax
  where
  count = length (filter (== mychar) str)
 
@@ -16,10 +16,10 @@ valid2 []=0
 valid2 (x:xs) = if check2 x then valid2 xs + 1 else valid2 xs
 
 check2 :: Input  -> Bool
-check2 (MyInput mymin mymax mychar str) = (xor ((str !! (mymin-1)) == mychar ) ((str !! (mymax-1)) == mychar))
+check2 (MyInput mymin mymax mychar str) = xor ((str !! (mymin-1)) == mychar ) ((str !! (mymax-1)) == mychar)
 
 xor :: Bool -> Bool -> Bool
-xor x y = (x/=y)
+xor x y = x/=y
 
 example :: [Input]
 example=[
