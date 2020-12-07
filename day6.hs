@@ -14,11 +14,13 @@ input2Data (str:xs)= if str /= "" then myAdd (str) (input2Data xs) else []:(inpu
 myAdd :: String -> [[String]] -> [[String]]
 myAdd p (x:xs) = (p:x):xs
 
+-- next time i will use concat
 myAppend :: [String] -> String
 myAppend [] =""
 myAppend (x:xs) = x ++ (myAppend xs)
 
 -- from https://rosettacode.org/wiki/Remove_duplicate_elements#Haskell
+-- next time i will use nub
 unique :: Eq a => [a] -> [a]
 unique []       = []
 unique (x : xs) = x : unique (filter (x /=) xs)
