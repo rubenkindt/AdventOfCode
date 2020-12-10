@@ -75,7 +75,7 @@ part2E(ContList):-
 
 findContinious(Nr,List,ContList):-
  length(List,Len),
- numlist(1,Len,NumList),
+ numlist(0,Len,NumList),
  member(Start,NumList),
  member(End,NumList),
  Start<End,
