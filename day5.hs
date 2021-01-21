@@ -13,6 +13,8 @@ findmissing int (x:xs)  = if (int+1)==x then findmissing x xs else print (int+1)
 
 str2Seat :: [String] -> [Int]
 str2Seat list= [getSeat str |str<-list]  
+--notes jan 2020 by Ruben
+--str2Seat list= map getSeat list
 
 getSeat :: String -> Int
 getSeat str = (row*8)+col where
